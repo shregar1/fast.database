@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fastmvc-db-models"
+version = "0.1.0"
+description = "Shared SQLAlchemy ORM models for FastMVC apps (user/auth, payments, conversations, webhooks, etc.)"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["sqlalchemy>=2.0,<3.0"]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+
