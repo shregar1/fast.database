@@ -19,21 +19,21 @@ from fastmvc_db_models.constants.db.table import Table
 from fastmvc_db_models.models import Base
 
 
-class InterviewReminder(Base):
+class Reminder(Base):
     """
-    User-scheduled reminder for an upcoming interview.
+    User-scheduled reminder.
 
     Attributes:
         id: Primary key.
         user_id: FK to user (owner).
-        scheduled_at: When the interview is scheduled (UTC).
+        scheduled_at: When the reminder is scheduled (UTC).
         reminder_minutes_before: Send reminder this many minutes before scheduled_at.
-        title: Optional label (e.g. "Google PM interview").
+        title: Optional label (e.g. "Google PM reminder").
         sent_at: When the reminder was sent (NULL until job sends it).
         created_at, updated_at, created_by: Audit.
     """
 
-    __tablename__ = Table.INTERVIEW_REMINDER
+    __tablename__ = Table.REMINDER
 
     id = Column(BigInteger, primary_key=True, autoincrement=True)
     user_id = Column(BigInteger, ForeignKey("user.id", ondelete="CASCADE"), nullable=False, index=True)

@@ -137,11 +137,94 @@ class Table:
     NOTIFICATION_HISTORY: Final[str] = "notification_history"
     USER_NOTIFICATION_PREFERENCE: Final[str] = "user_notification_preference"
     USER_USAGE_ALERT_PREFERENCE: Final[str] = "user_usage_alert_preference"
-    INTERVIEW_REMINDER: Final[str] = "interview_reminder"
-    """Table for user-scheduled interview reminders (scheduled_at, reminder_minutes_before)."""
+    REMINDER: Final[str] = "reminder"
+    """Table for user-scheduled reminders (scheduled_at, reminder_minutes_before)."""
 
     CONVERSATION: Final[str] = "conversations"
     """Table for LLM conversations (user_id, optional session_id, title, created_at)."""
 
     CONVERSATION_MESSAGE: Final[str] = "conversation_messages"
     """Table for conversation messages (conversation_id, role, content, created_at)."""
+
+    # Commerce (generic cart / catalog / order — reusable across industries)
+    PRODUCT: Final[str] = "product"
+    """Sellable catalog item (sku, pricing, inventory flags, JSON metadata)."""
+
+    CART: Final[str] = "cart"
+    """Shopping cart (user or guest, currency, status, cached totals)."""
+
+    CART_ITEM: Final[str] = "cart_item"
+    """Line in a cart (product ref, quantity, unit price snapshot, line metadata)."""
+
+    COMMERCE_ORDER: Final[str] = "orders"
+    """Customer order (order_number, addresses snapshot, totals, payment link)."""
+
+    ORDER_ITEM: Final[str] = "order_item"
+    """Line on a placed order (immutable price/title snapshots, fulfillment hint)."""
+
+    SHIPMENT: Final[str] = "shipments"
+    """Fulfillment shipment for an order (carrier, tracking, status, timestamps)."""
+
+    SHIPMENT_TRACKING_LOG: Final[str] = "shipment_tracking_log"
+    """Append-only carrier tracking events for a shipment (scans, status, raw payload)."""
+
+    # Pure.cam / personal ledger (see API_AND_DATA_REFERENCE.md — sync + local shapes)
+    LEDGER_WORKSPACE: Final[str] = "ledger_workspace"
+    """User workspace (client id + name); scopes ledger rows."""
+
+    LEDGER_TRANSACTION: Final[str] = "ledger_transaction"
+    """Ledger transaction (INCOME/EXPENSE, splits, SMS link)."""
+
+    LEDGER_LINKED_ACCOUNT: Final[str] = "ledger_linked_account"
+    """SMS/notification import rule (sender pattern, body filter)."""
+
+    LEDGER_BUDGET: Final[str] = "ledger_budget"
+    """Category or total expense budget (MONTHLY/WEEKLY)."""
+
+    LEDGER_BALANCE_ALERT: Final[str] = "ledger_balance_alert"
+    """Low-balance threshold per workspace (at most one row per workspace)."""
+
+    LEDGER_RECURRING_TRANSACTION: Final[str] = "ledger_recurring_transaction"
+    """Recurring rent/subscription (WEEKLY/MONTHLY, next due date)."""
+
+    LEDGER_DEBT: Final[str] = "ledger_debt"
+    """IOU / informal debt (direction, amount, due)."""
+
+    LEDGER_DEBT_PAYMENT: Final[str] = "ledger_debt_payment"
+    """Payment applied to a ledger debt."""
+
+    LEDGER_DEBT_CREDIT: Final[str] = "ledger_debt_credit"
+    """Credit adjustment on a ledger debt."""
+
+    LEDGER_GOAL: Final[str] = "ledger_goal"
+    """Savings goal (target, deadline)."""
+
+    LEDGER_GOAL_CONTRIBUTION: Final[str] = "ledger_goal_contribution"
+    """Contribution toward a goal."""
+
+    LEDGER_EMI_LOAN: Final[str] = "ledger_emi_loan"
+    """EMI / loan tracker (principal, months, reminders)."""
+
+    LEDGER_CUSTOM_CATEGORY: Final[str] = "ledger_custom_category"
+    """User-defined expense/income category."""
+
+    LEDGER_INVOICE_DOCUMENT: Final[str] = "ledger_invoice_document"
+    """User invoice/bill document (line items JSON); not provider billing Invoice."""
+
+    LEDGER_BUSINESS_INFO: Final[str] = "ledger_business_info"
+    """Seller/business block for generated invoices (JSON snapshot)."""
+
+    LEDGER_SCHEDULED_REMINDER: Final[str] = "ledger_scheduled_reminder"
+    """Scheduled notification (daily/monthly, screen route, EMI link)."""
+
+    LEDGER_VAULT_ENTRY: Final[str] = "ledger_vault_entry"
+    """Vault item metadata / encrypted backup pointer (no plaintext secrets)."""
+
+    STELLAR_CONTRACT: Final[str] = "stellar_contract"
+    """Hourly client contract (SQLite contracts table shape)."""
+
+    STELLAR_CONTRACT_HOURS: Final[str] = "stellar_contract_hours"
+    """Logged hours per contract per month/year."""
+
+    STELLAR_CONTRACT_PAYMENT: Final[str] = "stellar_contract_payment"
+    """Payment recorded against a contract."""

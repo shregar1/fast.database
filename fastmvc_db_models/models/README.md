@@ -198,3 +198,8 @@ models/
 6. Include standard audit fields
 7. Add comprehensive docstrings
 8. Update this README
+
+## See also
+
+- Package-level documentation: [`../../README.md`](../../README.md)
+- Monorepo index: [`../../../README.md`](../../../README.md)

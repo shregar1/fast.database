@@ -68,6 +68,33 @@ from fastmvc_db_models.models.payment_refund import PaymentRefund
 from fastmvc_db_models.models.user_payment_method import UserPaymentMethod
 from fastmvc_db_models.models.invoice import Invoice
 
+# Commerce (generic catalog, cart, orders, fulfillment)
+from fastmvc_db_models.models.product import Product
+from fastmvc_db_models.models.cart import Cart, CartItem
+from fastmvc_db_models.models.order import Order, OrderItem
+from fastmvc_db_models.models.shipment import Shipment
+from fastmvc_db_models.models.shipment_tracking_log import ShipmentTrackingLog
+
+# Pure.cam / personal ledger (API_AND_DATA_REFERENCE.md)
+from fastmvc_db_models.models.ledger_workspace import LedgerWorkspace
+from fastmvc_db_models.models.ledger_transaction import LedgerTransaction
+from fastmvc_db_models.models.ledger_linked_account import LedgerLinkedAccount
+from fastmvc_db_models.models.ledger_budget import LedgerBudget
+from fastmvc_db_models.models.ledger_balance_alert import LedgerBalanceAlert
+from fastmvc_db_models.models.ledger_recurring_transaction import LedgerRecurringTransaction
+from fastmvc_db_models.models.ledger_debt import LedgerDebt, LedgerDebtPayment, LedgerDebtCredit
+from fastmvc_db_models.models.ledger_goal import LedgerGoal, LedgerGoalContribution
+from fastmvc_db_models.models.ledger_emi_loan import LedgerEmiLoan
+from fastmvc_db_models.models.ledger_custom_category import LedgerCustomCategory
+from fastmvc_db_models.models.ledger_invoice_document import LedgerBusinessInfo, LedgerInvoiceDocument
+from fastmvc_db_models.models.ledger_scheduled_reminder import LedgerScheduledReminder
+from fastmvc_db_models.models.ledger_vault_entry import LedgerVaultEntry
+from fastmvc_db_models.models.stellar_contract import (
+    StellarContract,
+    StellarContractHours,
+    StellarContractPayment,
+)
+
 # Schema audit
 from fastmvc_db_models.models.transaction_log import TransactionLog
 from fastmvc_db_models.models.audit_log import AuditLog
