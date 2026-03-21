@@ -24,8 +24,10 @@ Dynamic: license-file
 
 - **`fastmvc_db_models.models` — `Base`** and all table classes.
 - **`fastmvc_db_models.constants.db.table` — `Table`** — centralized string names for `__tablename__`.
-- **`fastmvc_db_models.mixins`** — `TimestampMixin`, `UUIDPrimaryKeyMixin`, `SoftDeleteMixin` for new tables.
+- **`fastmvc_db_models.mixins`** — `TimestampMixin`, `UUIDPrimaryKeyMixin`, `SoftDeleteMixin`, `OrganizationScopedMixin`, `TenantIdMixin`, `OptimisticLockMixin`, `AuditActorMixin`.
+- **`fastmvc_db_models.optimistic_lock`** — `assert_version_matches`, `expected_version`, `StaleVersionError` for service-layer checks.
 - **`fastmvc_db_models.soft_delete`** — `select_active`, `where_not_deleted`, `mark_soft_deleted`, `restore_soft_deleted`, `filter_active`.
+- **`fastmvc_db_models.factories`** (optional **`[dev]`** extra, includes `factory-boy`) — example `PlanFactory` for tests.
 
 ### Mixins (new tables)
 
@@ -36,6 +38,41 @@ from fastmvc_db_models import Base, TimestampMixin, UUIDPrimaryKeyMixin, SoftDel
 class Widget(Base, UUIDPrimaryKeyMixin, TimestampMixin, SoftDeleteMixin):
     __tablename__ = "widgets"
     label = Column(String(255), nullable=False)
+```
+
+### Tenant-scoped rows (composite indexes)
+
+Use **`OrganizationScopedMixin`** (`organization_id` → `organizations.id`) or **`TenantIdMixin`** (generic `tenant_id` without FK). Add a composite index for common filters:
+
+```python
+from sqlalchemy import Column, Index, Integer, String
+from fastmvc_db_models import Base, OrganizationScopedMixin
+
+class InvoiceLine(Base, OrganizationScopedMixin):
+    __tablename__ = "invoice_lines"
+    __table_args__ = (Index("ix_invline_org_external", "organization_id", "external_ref"),)
+    id = Column(Integer, primary_key=True)
+    external_ref = Column(String(64), nullable=False)
+```
+
+### Optimistic locking
+
+Add **`OptimisticLockMixin`** and map ``version`` with :func:`sqlalchemy.orm.declared_attr` (see docstring on the mixin). Use **`assert_version_matches(instance, client_version)`** before applying updates from the API.
+
+### Audit actor columns
+
+**`AuditActorMixin`** adds nullable **`created_by_id`** / **`updated_by_id`** FKs to `user.id` (set from the current user in services).
+
+### factory_boy (tests)
+
+```bash
+pip install 'fastmvc-db-models[dev]'
+```
+
+```python
+from fastmvc_db_models.factories import PlanFactory
+# Bind PlanFactory._meta.sqlalchemy_session to your test session, then:
+plan = PlanFactory()
 ```
 
 ### Alembic autogenerate
@@ -83,6 +120,8 @@ pip install fastmvc-db-models
 ```
 
 Pair with **`fastmvc_db`** so your app’s engine uses the same metadata for Alembic migrations.
+
+For tests with **factory_boy** examples: `pip install 'fastmvc-db-models[dev]'`.
 
 ## Related packages
 

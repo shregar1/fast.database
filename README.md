@@ -118,3 +118,16 @@ For tests with **factory_boy** examples: `pip install 'fastmvc-db-models[dev]'`.
 ## Tooling
 
 See [CONTRIBUTING.md](CONTRIBUTING.md), [Makefile](Makefile), and [PUBLISHING.md](PUBLISHING.md).
+
+---
+
+## Documentation
+
+| Document | Purpose |
+|----------|---------|
+| [CONTRIBUTING.md](CONTRIBUTING.md) | Dev setup, tests, monorepo sync |
+| [PUBLISHING.md](PUBLISHING.md) | PyPI and releases |
+| [SECURITY.md](SECURITY.md) | Reporting vulnerabilities |
+| [CHANGELOG.md](CHANGELOG.md) | Version history |
+
+**Monorepo:** [../README.md](../README.md) · **Coverage:** [../docs/COVERAGE.md](../docs/COVERAGE.md)

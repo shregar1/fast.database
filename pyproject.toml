@@ -1,3 +1,20 @@
+
+
+[tool.coverage.run]
+source = ["fastmvc_db_models"]
+branch = false
+omit = ["*/tests/*"]
+
+[tool.coverage.report]
+fail_under = 95
+show_missing = true
+exclude_lines = [
+    "pragma: no cover",
+    "\\.\\.\\.",
+    "if TYPE_CHECKING:",
+]
+
+
 [build-system]
 requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
