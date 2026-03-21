@@ -1,6 +1,6 @@
 """Tests for shared table name constants."""
 
-from fastmvc_db_models.constants.db.table import Table
+from src.constants.db.table import Table
 
 
 def test_core_table_names_exist():

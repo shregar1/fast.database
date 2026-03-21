@@ -1,10 +1,10 @@
 """Smoke tests for selected ORM models (no live DB required)."""
 
 from fastmvc_db_models import Base
-from fastmvc_db_models.constants.db.table import Table
-from fastmvc_db_models.models.messaging_chat import Chat
-from fastmvc_db_models.models.status_lk import StatusLk
-from fastmvc_db_models.models.user import User
+from src.constants.db.table import Table
+from src.models.messaging_chat import Chat
+from src.models.status_lk import StatusLk
+from src.models.user import User
 
 
 def test_user_tablename():

@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import pytest
 
-from fastmvc_db_models.optimistic_lock import (
+from src.optimistic_lock import (
     StaleVersionError,
     assert_version_matches,
     expected_version,

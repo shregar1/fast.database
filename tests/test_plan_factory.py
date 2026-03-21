@@ -10,8 +10,8 @@ pytest.importorskip("factory.alchemy")
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from fastmvc_db_models.factories.plan_factory import PlanFactory
-from fastmvc_db_models.models.plan import Plan
+from src.factories.plan_factory import PlanFactory
+from src.models.plan import Plan
 
 
 @pytest.fixture()

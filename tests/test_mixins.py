@@ -5,8 +5,8 @@ from __future__ import annotations
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import Session, declared_attr, sessionmaker
 
-from fastmvc_db_models.models import Base
-from fastmvc_db_models.mixins import (
+from src.models import Base
+from src.mixins import (
     AuditActorMixin,
     OptimisticLockMixin,
     OrganizationScopedMixin,
