@@ -146,6 +146,22 @@ class Table:
     CONVERSATION_MESSAGE: Final[str] = "conversation_messages"
     """Table for conversation messages (conversation_id, role, content, created_at)."""
 
+    # User-to-user messaging (chats, read receipts, outbound message notifications)
+    CHAT: Final[str] = "chats"
+    """Chat thread or room (direct, group, channel); optional org scope."""
+
+    CHAT_PARTICIPANT: Final[str] = "chat_participants"
+    """Membership in a chat (role, mute, notification level, last-read cursor)."""
+
+    CHAT_MESSAGE: Final[str] = "chat_messages"
+    """User message in a chat (body, content type, reply, soft delete)."""
+
+    MESSAGE_READ_RECEIPT: Final[str] = "message_read_receipts"
+    """Per-user seen/read timestamp for a chat message (read receipts)."""
+
+    CHAT_MESSAGE_NOTIFICATION: Final[str] = "chat_message_notifications"
+    """Delivery log for push/email/SMS notifications tied to a chat message."""
+
     # Commerce (generic cart / catalog / order — reusable across industries)
     PRODUCT: Final[str] = "product"
     """Sellable catalog item (sku, pricing, inventory flags, JSON metadata)."""

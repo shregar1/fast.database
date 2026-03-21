@@ -102,5 +102,14 @@ from fastmvc_db_models.models.audit_log import AuditLog
 # Conversations (LLM threads)
 from fastmvc_db_models.models.conversation import Conversation, ConversationMessage
 
+# User-to-user messaging (chats, read receipts, notification delivery)
+from fastmvc_db_models.models.messaging_chat import (
+    Chat,
+    ChatMessage,
+    ChatMessageNotification,
+    ChatParticipant,
+    MessageReadReceipt,
+)
+
 # Webhooks (outbound + delivery log)
 from fastmvc_db_models.models.webhook import Webhook, WebhookDelivery
