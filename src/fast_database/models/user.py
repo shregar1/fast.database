@@ -38,8 +38,9 @@ class User(Base):
         user_type_id: FK to user_type_lk.
         is_deleted: Soft-delete flag.
         last_login: Last successful login timestamp.
-        created_at, updated_at: Audit timestamps.
+        created_at,         updated_at: Audit timestamps.
         created_by, updated_by: FK to user.id (audit).
+        Signing key material (Ed25519 PEM) lives in :class:`~fast_database.models.user_signing_key.UserSigningKey`.
     """
 
 

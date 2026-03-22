@@ -1,6 +1,8 @@
 # fast-database
 
-**Shared SQLAlchemy ORM models** for FastMVC applications: one declarative `Base`, table name constants, and models for users/auth, organizations, subscriptions, payments, commerce (cart/orders/shipments), webhooks, notifications, LLM **conversation** threads, **user messaging** (chats, messages, read receipts, notification delivery), personal ledger / Pure.cam–aligned tables, and audit logs.
+**Shared SQLAlchemy ORM models** for FastMVC applications: one declarative `Base`, table name constants, and models for users/auth, organizations, subscriptions, payments, commerce (cart/orders/shipments), webhooks, notifications, LLM **conversation** threads, **per-user encrypted LLM provider API keys** (BYOK), **user messaging** (chats, messages, read receipts, notification delivery), personal ledger / Pure.cam–aligned tables, and audit logs.
+
+**Operational / production patterns** baked into the schema include: **idempotency** (`IdempotencyRecord`), **transactional outbox** (`OutboxEvent`), **one-time tokens** (`UserOneTimeToken`), **login attempt history** (`UserLoginEvent`), **consent** (`ConsentRecord`), plus **`SystemSetting`** (runtime toggles), **`UserMfaFactor`** (MFA enrollment), **`DataExportRequest`** (GDPR-style exports), **`SecurityEvent`** (SIEM-friendly signals), and **`UsageCounter`** (quota / metering buckets).
 
 The same wheel also ships **`fast_database.repositories`**: `IRepository`, `FilterOperator`, and concrete repository classes for the tables above (same import paths as before).
 

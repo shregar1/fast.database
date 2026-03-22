@@ -52,6 +52,10 @@ class Table:
     """Table name for user accounts and authentication data."""
 
 
+    USER_SIGNING_KEY: Final[str] = "user_signing_key"
+    """Ed25519 keypair material per user (PEM public + Fernet-encrypted private); one row per user."""
+
+
     SESSION: Final[str] = "sessions"
     """Table name for interview sessions."""
 
@@ -92,8 +96,48 @@ class Table:
     """Table name for server-to-server API keys (per user, hashed key, scopes)."""
 
 
+    USER_LLM_PROVIDER_KEY: Final[str] = "user_llm_provider_keys"
+    """Per-user encrypted LLM provider API keys (OpenAI, Anthropic, OpenRouter, Gemini, …)."""
+
+
     CONSENT: Final[str] = "consent_records"
     """Table name for ToS/Privacy consent (user_id, type, version, accepted_at)."""
+
+
+    IDEMPOTENCY_RECORD: Final[str] = "idempotency_records"
+    """HTTP / payment idempotency: dedupe writes and optionally cache replay responses."""
+
+
+    USER_ONE_TIME_TOKEN: Final[str] = "user_one_time_tokens"
+    """Single-use tokens: password reset, email verification, magic links (hashed at rest)."""
+
+
+    USER_LOGIN_EVENT: Final[str] = "user_login_events"
+    """Append-only login attempts (success/fail) for security analytics and lockout policies."""
+
+
+    OUTBOX_EVENT: Final[str] = "outbox_events"
+    """Transactional outbox for reliable async delivery (Kafka, webhooks, workers)."""
+
+
+    SYSTEM_SETTING: Final[str] = "system_settings"
+    """Namespaced key/value settings (feature toggles, limits) without redeploy; optional JSON or secret flag."""
+
+
+    USER_MFA_FACTOR: Final[str] = "user_mfa_factors"
+    """Second factors per user (TOTP, WebAuthn credentials); secrets stored encrypted or as opaque handles."""
+
+
+    DATA_EXPORT_REQUEST: Final[str] = "data_export_requests"
+    """GDPR / data-portability export jobs (status, artifact location, expiry)."""
+
+
+    SECURITY_EVENT: Final[str] = "security_events"
+    """High-signal security signals (lockouts, impossible travel, admin actions) for SIEM and dashboards."""
+
+
+    USAGE_COUNTER: Final[str] = "usage_counters"
+    """Idempotent daily/hourly usage buckets for quotas, billing, and rate-limit analytics."""
 
 
     ORGANIZATION: Final[str] = "organizations"

@@ -48,6 +48,17 @@ from fast_database.models.country_lk import CountryLk
 
 # Schema core
 from fast_database.models.user import User
+from fast_database.models.user_signing_key import UserSigningKey
+from fast_database.models.consent_record import ConsentRecord
+from fast_database.models.idempotency_record import IdempotencyRecord
+from fast_database.models.user_one_time_token import UserOneTimeToken
+from fast_database.models.user_login_event import UserLoginEvent
+from fast_database.models.outbox_event import OutboxEvent
+from fast_database.models.system_setting import SystemSetting
+from fast_database.models.user_mfa_factor import UserMfaFactor
+from fast_database.models.data_export_request import DataExportRequest
+from fast_database.models.security_event import SecurityEvent
+from fast_database.models.usage_counter import UsageCounter
 from fast_database.models.user_profile_photo import UserProfilePhoto
 from fast_database.models.user_language import UserLanguage
 from fast_database.models.profile import Profile
@@ -113,3 +124,9 @@ from fast_database.models.messaging_chat import (
 
 # Webhooks (outbound + delivery log)
 from fast_database.models.webhook import Webhook, WebhookDelivery
+
+# Per-user encrypted LLM provider keys (BYOK)
+from fast_database.models.user_provider_key import UserProviderKey
+
+# Backward-compatible alias for code that still imports ``UserLlmProviderKey``
+UserLlmProviderKey = UserProviderKey
