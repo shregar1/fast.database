@@ -2,7 +2,7 @@
 
 from sqlalchemy.orm import Session
 
-from fast_repositories.repository import IRepository
+from fast_database.repositories.abstraction import IRepository
 from fast_database.models.user_notification_preference import UserNotificationPreference
 
 CHANNELS = ("email", "push", "slack")

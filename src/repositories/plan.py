@@ -2,11 +2,11 @@
 Plan Repository.
 
 Data access for the Plan model (plan definitions and limits keyed by plan_code).
-Extends :class:`~fast_repositories.repository.IRepository` with ``model=Plan``.
+Extends :class:`~fast_database.repositories.repository.IRepository` with ``model=Plan``.
 get_by_plan_code and list_all for catalog and rate-limit/entitlement resolution.
 
 Usage:
-    >>> from fast_repositories.plan import PlanRepository
+    >>> from fast_database.repositories.plan import PlanRepository
     >>> repo = PlanRepository(session=db_session)
     >>> plan = repo.get_by_plan_code("pro")
     >>> plans = repo.list_all()
@@ -16,7 +16,7 @@ Usage:
 
 from sqlalchemy.orm import Session
 
-from fast_repositories.repository import IRepository
+from fast_database.repositories.abstraction import IRepository
 from fast_database.models.plan import Plan
 
 

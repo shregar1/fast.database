@@ -2,12 +2,12 @@
 Consent Repository.
 
 Data access for ConsentRecord (ToS/Privacy acceptance). Extends
-:class:`~fast_repositories.repository.IRepository`. Get by user and type, list all consents for a user, and accept
+:class:`~fast_database.repositories.repository.IRepository`. Get by user and type, list all consents for a user, and accept
 (upsert: update version and accepted_at if record exists, else create). Used
 by registration and legal-compliance flows.
 
 Usage:
-    >>> from fast_repositories.consent import ConsentRepository
+    >>> from fast_database.repositories.consent import ConsentRepository
     >>> repo = ConsentRepository(session=db_session)
     >>> rec = repo.get_by_user_and_type(user_id=1, type="tos")
     >>> repo.accept(user_id=1, type="privacy", version="2024-01")
@@ -19,7 +19,7 @@ from datetime import datetime, timezone
 
 from sqlalchemy.orm import Session
 
-from fast_repositories.repository import IRepository
+from fast_database.repositories.abstraction import IRepository
 from fast_database.models.consent import ConsentRecord
 
 

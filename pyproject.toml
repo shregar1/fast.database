@@ -1,7 +1,7 @@
 
 
 [tool.coverage.run]
-# Models stay at the 95% gate; concrete `fast_repositories/*` modules are thin CRUD wrappers
+# Models stay at the 95% gate; concrete `fast_database.repositories/*` modules are thin CRUD wrappers
 # exercised in app/integration tests rather than this package's unit suite.
 source = ["fast_database"]
 branch = false

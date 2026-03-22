@@ -4,10 +4,10 @@ Document Repository.
 Data access layer for the Document model (uploaded file metadata: resume, JD,
 storage path, virus scan status). Provides create, retrieve by id, filtered
 listing (user_id, session_id, document_type), and hard delete. Extends
-:class:`~fast_repositories.repository.IRepository` with ``model=Document``.
+:class:`~fast_database.repositories.repository.IRepository` with ``model=Document``.
 
 Usage:
-    >>> from fast_repositories.document import DocumentRepository
+    >>> from fast_database.repositories.document import DocumentRepository
     >>> repo = DocumentRepository(session=db_session)
     >>> doc = repo.create_record(record=document_instance)
     >>> docs, total = repo.retrieve_records(user_id=1, document_type="resume")
@@ -17,7 +17,7 @@ Usage:
 
 from sqlalchemy.orm import Session
 
-from fast_repositories.repository import IRepository
+from fast_database.repositories.abstraction import IRepository
 from fast_database.models.document import Document
 
 

@@ -18,9 +18,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- **Merged `fast-repositories` into this distribution.** Install only `fast-database` (version ≥0.2.0); import paths stay `fast_repositories.*` and `fast_database.*`.
+- **Merged `fast-repositories` into this distribution.** Install only `fast-database` (version ≥0.2.0); import paths stay `fast_database.repositories.*` and `fast_database.*`.
 - **Dependencies:** added `loguru` and `cachetools` (required by `IRepository`).
-- **Source layout:** packages live under `src/fast_database/` and `src/fast_repositories/` (setuptools `packages.find`).
+- **Source layout:** packages live under `src/fast_database/` and `src/fast_database.repositories/` (setuptools `packages.find`).
 
 ### Added
 

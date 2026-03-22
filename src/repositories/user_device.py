@@ -7,7 +7,7 @@ use inherited or service methods for list by user, create, update, revoke.
 Used by device management and security flows.
 
 Usage:
-    >>> from fast_repositories.user_device import UserDeviceRepository
+    >>> from fast_database.repositories.user_device import UserDeviceRepository
     >>> repo = UserDeviceRepository(session=db_session, user_id=1)
 """
 
@@ -15,7 +15,7 @@ Usage:
 
 from sqlalchemy.orm import Session
 
-from fast_repositories.repository import IRepository
+from fast_database.repositories.abstraction import IRepository
 from fast_database.models.user_device import UserDevice
 
 

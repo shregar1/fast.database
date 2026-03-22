@@ -7,7 +7,7 @@ create_for_user, and update_for_user. Uses IRepository base; session is optional
 at init but required for all operations.
 
 Usage:
-    >>> from fast_repositories.profile import ProfileRepository
+    >>> from fast_database.repositories.profile import ProfileRepository
     >>> repo = ProfileRepository(session=db_session)
     >>> profile = repo.retrieve_by_user_id(user_id=1)
     >>> profile = repo.create_for_user(user_id=1, data={"first_name": "Jane", ...})
@@ -17,7 +17,7 @@ Usage:
 
 from sqlalchemy.orm import Session
 
-from fast_repositories.repository import IRepository
+from fast_database.repositories.abstraction import IRepository
 from fast_database.models.profile import Profile
 
 

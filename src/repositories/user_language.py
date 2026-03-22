@@ -6,7 +6,7 @@ languages a user speaks). IRepository wrapper; use for list by user, add,
 remove (soft delete). Used by profile and onboarding flows.
 
 Usage:
-    >>> from fast_repositories.user_language import UserLanguageRepository
+    >>> from fast_database.repositories.user_language import UserLanguageRepository
     >>> repo = UserLanguageRepository(session=db_session)
 """
 
@@ -14,7 +14,7 @@ Usage:
 
 from sqlalchemy.orm import Session
 
-from fast_repositories.repository import IRepository
+from fast_database.repositories.abstraction import IRepository
 from fast_database.models.user_language import UserLanguage
 
 

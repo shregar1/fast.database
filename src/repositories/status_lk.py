@@ -6,7 +6,7 @@ cancelled). IRepository wrapper; use for retrieve by id or code, list all.
 Referenced by Invoice and other status-carrying entities.
 
 Usage:
-    >>> from fast_repositories.status_lk import StatusLkRepository
+    >>> from fast_database.repositories.status_lk import StatusLkRepository
     >>> repo = StatusLkRepository(session=db_session)
 """
 
@@ -14,7 +14,7 @@ Usage:
 
 from sqlalchemy.orm import Session
 
-from fast_repositories.repository import IRepository
+from fast_database.repositories.abstraction import IRepository
 from fast_database.models.status_lk import StatusLk
 
 

@@ -7,7 +7,7 @@ retrieve_records_by_filter, or list methods. Lookup data is typically
 seed-loaded; read-heavy.
 
 Usage:
-    >>> from fast_repositories.user_type_lk import UserTypeLkRepository
+    >>> from fast_database.repositories.user_type_lk import UserTypeLkRepository
     >>> repo = UserTypeLkRepository(session=db_session)
 """
 
@@ -15,7 +15,7 @@ Usage:
 
 from sqlalchemy.orm import Session
 
-from fast_repositories.repository import IRepository
+from fast_database.repositories.abstraction import IRepository
 from fast_database.models.user_type_lk import UserTypeLk
 
 

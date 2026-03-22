@@ -6,7 +6,7 @@ pending, succeeded, failed, refunded). IRepository wrapper; use for retrieve
 by id or code, list all. Used by PaymentTransaction and PaymentRefund.
 
 Usage:
-    >>> from fast_repositories.payment_status_lk import PaymentStatusLkRepository
+    >>> from fast_database.repositories.payment_status_lk import PaymentStatusLkRepository
     >>> repo = PaymentStatusLkRepository(session=db_session)
 """
 
@@ -14,7 +14,7 @@ Usage:
 
 from sqlalchemy.orm import Session
 
-from fast_repositories.repository import IRepository
+from fast_database.repositories.abstraction import IRepository
 from fast_database.models.payment_status_lk import PaymentStatusLk
 
 

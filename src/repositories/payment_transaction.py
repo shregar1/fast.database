@@ -7,7 +7,7 @@ use inherited or service methods for create, retrieve by id/provider_payment_id,
 and list by user. Used by checkout and webhook handlers.
 
 Usage:
-    >>> from fast_repositories.payment_transaction import PaymentTransactionRepository
+    >>> from fast_database.repositories.payment_transaction import PaymentTransactionRepository
     >>> repo = PaymentTransactionRepository(session=db_session)
 """
 
@@ -17,7 +17,7 @@ from datetime import datetime
 
 from sqlalchemy.orm import Session
 
-from fast_repositories.repository import IRepository
+from fast_database.repositories.abstraction import IRepository
 from fast_database.models.payment_transaction import PaymentTransaction
 
 

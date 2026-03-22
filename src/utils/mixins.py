@@ -21,7 +21,7 @@ from datetime import datetime, timezone
 
 from sqlalchemy import BigInteger, Boolean, Column, DateTime, ForeignKey, Integer, Uuid, text
 
-from fast_database.constants.db.table import Table
+from fast_database.constants.table import Table
 
 
 def _utc_now() -> datetime:

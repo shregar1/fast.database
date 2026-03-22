@@ -7,7 +7,7 @@ admin listing with optional email search and soft-delete handling. Requires a
 SQLAlchemy session; supports IRepository base (urn, user_urn, api_name, user_id).
 
 Usage:
-    >>> from fast_repositories.user import UserRepository
+    >>> from fast_database.repositories.user import UserRepository
     >>> repo = UserRepository(session=db_session, urn="req-1", user_id=1)
     >>> user = repo.retrieve_record_by_email("user@example.com")
     >>> user = repo.retrieve_record_by_id_and_is_logged_in(1, is_logged_in=True)
@@ -18,7 +18,7 @@ from datetime import datetime
 
 from sqlalchemy.orm import Session
 
-from fast_repositories.repository import IRepository
+from fast_database.repositories.abstraction import IRepository
 from fast_database.models.user import User
 
 

@@ -7,7 +7,7 @@ list by user with optional filters (user_subscription_id, status_id, date
 range), and update_record. Uses IRepository base.
 
 Usage:
-    >>> from fast_repositories.invoice import InvoiceRepository
+    >>> from fast_database.repositories.invoice import InvoiceRepository
     >>> repo = InvoiceRepository(session=db_session)
     >>> inv = repo.retrieve_by_provider_and_external_id(provider_id=1, external_id="in_123")
     >>> items, total = repo.list_by_user(user_id=1, status_id=2, skip=0, limit=20)
@@ -19,7 +19,7 @@ from datetime import datetime
 
 from sqlalchemy.orm import Session
 
-from fast_repositories.repository import IRepository
+from fast_database.repositories.abstraction import IRepository
 from fast_database.models.invoice import Invoice
 from fast_database.models.payment_provider_lk import PaymentProviderLk
 

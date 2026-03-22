@@ -7,7 +7,7 @@ extend or use service layer for retrieve_by_user, create, update. Used by
 subscription and billing flows.
 
 Usage:
-    >>> from fast_repositories.user_subscription import UserSubscriptionRepository
+    >>> from fast_database.repositories.user_subscription import UserSubscriptionRepository
     >>> repo = UserSubscriptionRepository(session=db_session, user_id=1)
 """
 
@@ -15,7 +15,7 @@ Usage:
 
 from sqlalchemy.orm import Session
 
-from fast_repositories.repository import IRepository
+from fast_database.repositories.abstraction import IRepository
 from fast_database.models.user_subscription import UserSubscription
 
 

@@ -1,7 +1,7 @@
 """Smoke tests for selected ORM models (no live DB required)."""
 
 from fast_database import Base
-from fast_database.constants.db.table import Table
+from fast_database.constants.table import Table
 from fast_database.models.messaging_chat import Chat
 from fast_database.models.status_lk import StatusLk
 from fast_database.models.user import User

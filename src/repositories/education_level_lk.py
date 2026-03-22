@@ -6,7 +6,7 @@ bachelor, master). IRepository wrapper; use for retrieve by id or code, list
 all. Used by Profile for education_level_id.
 
 Usage:
-    >>> from fast_repositories.education_level_lk import EducationLevelLkRepository
+    >>> from fast_database.repositories.education_level_lk import EducationLevelLkRepository
     >>> repo = EducationLevelLkRepository(session=db_session)
 """
 
@@ -14,7 +14,7 @@ Usage:
 
 from sqlalchemy.orm import Session
 
-from fast_repositories.repository import IRepository
+from fast_database.repositories.abstraction import IRepository
 from fast_database.models.education_level_lk import EducationLevelLk
 
 

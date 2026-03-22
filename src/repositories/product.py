@@ -11,7 +11,7 @@ from __future__ import annotations
 
 from sqlalchemy.orm import Session
 
-from fast_repositories.repository import IRepository
+from fast_database.repositories.abstraction import IRepository
 from fast_database.soft_delete import filter_active, mark_soft_deleted
 from fast_database.models.product import Product
 

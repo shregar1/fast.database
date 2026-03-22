@@ -12,7 +12,7 @@ from datetime import datetime, timezone
 
 from sqlalchemy.orm import Session
 
-from fast_repositories.repository import IRepository
+from fast_database.repositories.abstraction import IRepository
 from fast_database.models.refresh_token import RefreshToken
 
 

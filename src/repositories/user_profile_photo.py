@@ -6,7 +6,7 @@ is_deleted). IRepository wrapper; use for create, retrieve by id/user_id,
 update, and list by user. Used by profile and avatar APIs.
 
 Usage:
-    >>> from fast_repositories.user_profile_photo import UserProfilePhotoRepository
+    >>> from fast_database.repositories.user_profile_photo import UserProfilePhotoRepository
     >>> repo = UserProfilePhotoRepository(session=db_session)
 """
 
@@ -14,7 +14,7 @@ Usage:
 
 from sqlalchemy.orm import Session
 
-from fast_repositories.repository import IRepository
+from fast_database.repositories.abstraction import IRepository
 from fast_database.models.user_profile_photo import UserProfilePhoto
 
 

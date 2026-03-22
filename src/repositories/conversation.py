@@ -11,7 +11,7 @@ from datetime import datetime, timezone
 from sqlalchemy import nulls_last
 from sqlalchemy.orm import Session
 
-from fast_repositories.repository import IRepository
+from fast_database.repositories.abstraction import IRepository
 from fast_database.models.conversation import Conversation, ConversationMessage
 
 

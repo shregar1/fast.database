@@ -4,7 +4,7 @@ User usage alert preference repository: get or upsert per-user threshold and cha
 
 from sqlalchemy.orm import Session
 
-from fast_repositories.repository import IRepository
+from fast_database.repositories.abstraction import IRepository
 from fast_database.models.user_usage_alert_preference import UserUsageAlertPreference
 
 

@@ -8,7 +8,7 @@ create delivery, list by webhook_id, update status. Used by webhook management
 and outbound delivery workers.
 
 Usage:
-    >>> from fast_repositories.webhook import WebhookRepository
+    >>> from fast_database.repositories.webhook import WebhookRepository
     >>> repo = WebhookRepository(session=db_session)
     >>> webhooks, total = repo.retrieve_records(user_id=1, enabled_only=True)
 """
@@ -18,7 +18,7 @@ Usage:
 from sqlalchemy import func, nulls_last
 from sqlalchemy.orm import Session
 
-from fast_repositories.repository import IRepository
+from fast_database.repositories.abstraction import IRepository
 from fast_database.models.webhook import Webhook, WebhookDelivery
 
 

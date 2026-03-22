@@ -14,7 +14,7 @@ from sqlalchemy import BigInteger, Column, DateTime, ForeignKey, LargeBinary, St
 
 from sqlalchemy.dialects.postgresql import JSONB
 
-from fast_database.constants.db.table import Table
+from fast_database.constants.table import Table
 from fast_database.models import Base
 
 

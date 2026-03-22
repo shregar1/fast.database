@@ -6,7 +6,7 @@ Repository design pattern. Repositories abstract database operations,
 providing a clean interface for data access with built-in caching.
 
 Filter operators for tuple-style filters are defined in
-``fast_repositories.filter_operator.FilterOperator``.
+``fast_database.repositories.filter_operator.FilterOperator``.
 
 Example:
     >>> class UserRepository(IRepository):
@@ -30,7 +30,7 @@ from loguru import logger
 from sqlalchemy import and_, or_
 from sqlalchemy.orm import DeclarativeMeta
 
-from fast_repositories.filter_operator import FilterOperator
+from fast_database.repositories.filter_operator import FilterOperator
 
 
 class IRepository(ABC):
@@ -57,7 +57,7 @@ class IRepository(ABC):
     Note:
         Subclasses must provide a ``session`` attribute (SQLAlchemy session)
         for database operations to work. Tuple filters use
-        ``fast_repositories.filter_operator.FilterOperator`` for operator
+        ``fast_database.repositories.filter_operator.FilterOperator`` for operator
         strings (for example ``FilterOperator.EQ``, ``FilterOperator.GTE``).
 
     Example:

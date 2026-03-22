@@ -14,7 +14,7 @@ from datetime import date, datetime
 
 from sqlalchemy import BigInteger, Boolean, Column, Date, DateTime, ForeignKey, String
 
-from fast_database.constants.db.table import Table
+from fast_database.constants.table import Table
 from fast_database.models import Base
 
 

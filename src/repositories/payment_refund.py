@@ -7,7 +7,7 @@ for create, retrieve by id/transaction_id, and list. Used by refund and
 webhook handlers.
 
 Usage:
-    >>> from fast_repositories.payment_refund import PaymentRefundRepository
+    >>> from fast_database.repositories.payment_refund import PaymentRefundRepository
     >>> repo = PaymentRefundRepository(session=db_session)
 """
 
@@ -15,7 +15,7 @@ Usage:
 
 from sqlalchemy.orm import Session
 
-from fast_repositories.repository import IRepository
+from fast_database.repositories.abstraction import IRepository
 from fast_database.models.payment_refund import PaymentRefund
 
 

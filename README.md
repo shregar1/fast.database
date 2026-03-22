@@ -2,11 +2,11 @@
 
 **Shared SQLAlchemy ORM models** for FastMVC applications: one declarative `Base`, table name constants, and models for users/auth, organizations, subscriptions, payments, commerce (cart/orders/shipments), webhooks, notifications, LLM **conversation** threads, **user messaging** (chats, messages, read receipts, notification delivery), personal ledger / Pure.cam–aligned tables, and audit logs.
 
-The same wheel also ships **`fast_repositories`**: `IRepository`, `FilterOperator`, and concrete repository classes for the tables above (same import paths as before).
+The same wheel also ships **`fast_database.repositories`**: `IRepository`, `FilterOperator`, and concrete repository classes for the tables above (same import paths as before).
 
 **Python:** 3.10+ · **Dependencies:** `sqlalchemy>=2,<3`, `loguru`, `cachetools`
 
-**Import packages:** `fast_database`, `fast_repositories`  
+**Import packages:** `fast_database`, `fast_database.repositories`  
 **PyPI distribution name:** `fast-database` (hyphenated)
 
 ## Layout
@@ -17,7 +17,7 @@ The same wheel also ships **`fast_repositories`**: `IRepository`, `FilterOperato
 - **`fast_database.optimistic_lock`** — `assert_version_matches`, `expected_version`, `StaleVersionError` for service-layer checks.
 - **`fast_database.soft_delete`** — `select_active`, `where_not_deleted`, `mark_soft_deleted`, `restore_soft_deleted`, `filter_active`.
 - **`fast_database.factories`** (optional **`[dev]`** extra, includes `factory-boy`) — example `PlanFactory` for tests.
-- **`fast_repositories`** — `FilterOperator`, `IRepository`, and per-entity repositories (e.g. `from fast_repositories.user import UserRepository`).
+- **`fast_database.repositories`** — `FilterOperator`, `IRepository`, and per-entity repositories (e.g. `from fast_database.repositories.user import UserRepository`).
 
 ### Mixins (new tables)
 

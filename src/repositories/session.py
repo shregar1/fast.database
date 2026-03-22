@@ -14,7 +14,7 @@ from typing import Any
 from sqlalchemy import func, literal
 from sqlalchemy.orm import Session
 
-from fast_repositories.repository import IRepository
+from fast_database.repositories.abstraction import IRepository
 from fast_database.soft_delete import filter_active
 from fast_database.models.session import Session as SessionModel
 

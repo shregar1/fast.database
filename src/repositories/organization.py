@@ -5,10 +5,10 @@ Data access for Organization, OrganizationInvite, and OrganizationMember.
 OrganizationRepository: create org, get_by_id, get_by_urn, list_by_owner.
 OrganizationMemberRepository: add member, get role, list members, remove.
 OrganizationInviteRepository: create invite, get by token, list pending, accept/revoke.
-All extend :class:`~fast_repositories.repository.IRepository`. Used by org and invite flows.
+All extend :class:`~fast_database.repositories.repository.IRepository`. Used by org and invite flows.
 
 Usage:
-    >>> from fast_repositories.organization import OrganizationRepository, OrganizationMemberRepository
+    >>> from fast_database.repositories.organization import OrganizationRepository, OrganizationMemberRepository
     >>> org_repo = OrganizationRepository(session=db_session)
     >>> org = org_repo.create(urn="urn:org:1", name="Acme", owner_id=1)
 """
@@ -19,7 +19,7 @@ from datetime import datetime, timezone
 
 from sqlalchemy.orm import Session
 
-from fast_repositories.repository import IRepository
+from fast_database.repositories.abstraction import IRepository
 from fast_database.models.organization import Organization, OrganizationInvite, OrganizationMember
 
 

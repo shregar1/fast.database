@@ -48,7 +48,7 @@ python -m pip install -e ./fast_database
 ```python
 from fast_database.models import Base
 from fast_database.models.user import User
-from fast_database.constants.db.table import Table
+from fast_database.constants.table import Table
 
 # Alembic / create_all
 # Base.metadata.create_all(engine)

@@ -2,13 +2,13 @@
 Coupon Repository.
 
 Data access for the Coupon model (discount codes). Extends
-:class:`~fast_repositories.repository.IRepository`.
+:class:`~fast_database.repositories.repository.IRepository`.
 get_by_code returns an active, valid coupon: within valid_from/valid_until and
 under max_redemptions if set. Used at checkout and subscription creation for
 discount application.
 
 Usage:
-    >>> from fast_repositories.coupon import CouponRepository
+    >>> from fast_database.repositories.coupon import CouponRepository
     >>> repo = CouponRepository(session=db_session)
     >>> coupon = repo.get_by_code("SAVE20")
 """
@@ -19,7 +19,7 @@ from datetime import datetime
 
 from sqlalchemy.orm import Session
 
-from fast_repositories.repository import IRepository
+from fast_database.repositories.abstraction import IRepository
 from fast_database.models.coupon import Coupon
 
 

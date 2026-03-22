@@ -7,7 +7,7 @@ create, update, set default, soft delete. Used by checkout and payment-method
 APIs.
 
 Usage:
-    >>> from fast_repositories.user_payment_method import UserPaymentMethodRepository
+    >>> from fast_database.repositories.user_payment_method import UserPaymentMethodRepository
     >>> repo = UserPaymentMethodRepository(session=db_session)
 """
 
@@ -15,7 +15,7 @@ Usage:
 
 from sqlalchemy.orm import Session
 
-from fast_repositories.repository import IRepository
+from fast_database.repositories.abstraction import IRepository
 from fast_database.models.user_payment_method import UserPaymentMethod
 
 

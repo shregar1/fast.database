@@ -1,13 +1,13 @@
 """
 API Key Repository.
 
-Data access for API keys (server-to-server auth). Extends :class:`~fast_repositories.repository.IRepository`.
+Data access for API keys (server-to-server auth). Extends :class:`~fast_database.repositories.repository.IRepository`.
 Supports create (with key_hash, name, scopes),
 lookup by key_hash (active only), list by user_id (optional include_revoked),
 revoke single key or all keys for a user, and update_last_used for usage tracking.
 
 Usage:
-    >>> from fast_repositories.api_key import ApiKeyRepository
+    >>> from fast_database.repositories.api_key import ApiKeyRepository
     >>> repo = ApiKeyRepository(session=db_session)
     >>> key = repo.create(user_id=1, key_hash=hash, name="CI", scopes=["read_only"])
     >>> key = repo.get_by_key_hash(key_hash)
@@ -21,7 +21,7 @@ from datetime import datetime, timezone
 
 from sqlalchemy.orm import Session
 
-from fast_repositories.repository import IRepository
+from fast_database.repositories.abstraction import IRepository
 from fast_database.models.api_key import ApiKey
 
 

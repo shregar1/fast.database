@@ -7,7 +7,7 @@ wrapper; use for create and query by api_id/reference_number or filters.
 Used by API logging and idempotency flows.
 
 Usage:
-    >>> from fast_repositories.transaction_log import TransactionLogRepository
+    >>> from fast_database.repositories.transaction_log import TransactionLogRepository
     >>> repo = TransactionLogRepository(session=db_session)
 """
 
@@ -15,7 +15,7 @@ Usage:
 
 from sqlalchemy.orm import Session
 
-from fast_repositories.repository import IRepository
+from fast_database.repositories.abstraction import IRepository
 from fast_database.models.transaction_log import TransactionLog
 
 

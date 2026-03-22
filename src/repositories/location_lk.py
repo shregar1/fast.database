@@ -6,7 +6,7 @@ pin_code). IRepository wrapper; use for retrieve by id or composite, list
 with filters. Used by Profile for location_id.
 
 Usage:
-    >>> from fast_repositories.location_lk import LocationLkRepository
+    >>> from fast_database.repositories.location_lk import LocationLkRepository
     >>> repo = LocationLkRepository(session=db_session)
 """
 
@@ -14,7 +14,7 @@ Usage:
 
 from sqlalchemy.orm import Session
 
-from fast_repositories.repository import IRepository
+from fast_database.repositories.abstraction import IRepository
 from fast_database.models.location_lk import LocationLk
 
 

@@ -7,7 +7,7 @@ IRepository or service-level methods for create_record and filtered queries.
 Used where the audit table is mapped via models.audit_log.
 
 Usage:
-    >>> from fast_repositories.audit_log import AuditLogRepository
+    >>> from fast_database.repositories.audit_log import AuditLogRepository
     >>> repo = AuditLogRepository(session=db_session, urn="req-1")
 """
 
@@ -15,7 +15,7 @@ Usage:
 
 from sqlalchemy.orm import Session
 
-from fast_repositories.repository import IRepository
+from fast_database.repositories.abstraction import IRepository
 from fast_database.models.audit_log import AuditLog
 
 

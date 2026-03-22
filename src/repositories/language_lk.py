@@ -6,7 +6,7 @@ wrapper; use for retrieve by id or code, list all. Used by UserLanguage and
 profile language dropdowns.
 
 Usage:
-    >>> from fast_repositories.language_lk import LanguageLkRepository
+    >>> from fast_database.repositories.language_lk import LanguageLkRepository
     >>> repo = LanguageLkRepository(session=db_session)
 """
 
@@ -14,7 +14,7 @@ Usage:
 
 from sqlalchemy.orm import Session
 
-from fast_repositories.repository import IRepository
+from fast_database.repositories.abstraction import IRepository
 from fast_database.models.language_lk import LanguageLk
 
 

@@ -14,7 +14,7 @@ from typing import Any
 
 from sqlalchemy import BigInteger, Boolean, Column, DateTime, Integer, String
 
-from fast_database.constants.db.table import Table
+from fast_database.constants.table import Table
 from fast_database.models import Base
 
 

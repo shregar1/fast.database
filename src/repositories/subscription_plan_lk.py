@@ -6,7 +6,7 @@ number_sessions, price_usd, features). IRepository wrapper; use for retrieve
 by id or name, list all. Used by subscription and checkout flows.
 
 Usage:
-    >>> from fast_repositories.subscription_plan_lk import SubscriptionPlanLkRepository
+    >>> from fast_database.repositories.subscription_plan_lk import SubscriptionPlanLkRepository
     >>> repo = SubscriptionPlanLkRepository(session=db_session)
 """
 
@@ -14,7 +14,7 @@ Usage:
 
 from sqlalchemy.orm import Session
 
-from fast_repositories.repository import IRepository
+from fast_database.repositories.abstraction import IRepository
 from fast_database.models.subscription_plan_lk import SubscriptionPlanLk
 
 

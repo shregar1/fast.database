@@ -6,7 +6,7 @@ card, upi, wallet). IRepository wrapper; use for retrieve by id or code,
 list all. Used by PaymentTransaction and UserPaymentMethod.
 
 Usage:
-    >>> from fast_repositories.payment_method_type_lk import PaymentMethodTypeLkRepository
+    >>> from fast_database.repositories.payment_method_type_lk import PaymentMethodTypeLkRepository
     >>> repo = PaymentMethodTypeLkRepository(session=db_session)
 """
 
@@ -14,7 +14,7 @@ Usage:
 
 from sqlalchemy.orm import Session
 
-from fast_repositories.repository import IRepository
+from fast_database.repositories.abstraction import IRepository
 from fast_database.models.payment_method_type_lk import PaymentMethodTypeLk
 
 

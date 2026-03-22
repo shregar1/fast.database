@@ -6,7 +6,7 @@ transaction logging). IRepository wrapper; use for retrieve by id or
 method+endpoint, list all. Used by TransactionLog and API catalog.
 
 Usage:
-    >>> from fast_repositories.api_lk import ApiLkRepository
+    >>> from fast_database.repositories.api_lk import ApiLkRepository
     >>> repo = ApiLkRepository(session=db_session)
 """
 
@@ -14,7 +14,7 @@ Usage:
 
 from sqlalchemy.orm import Session
 
-from fast_repositories.repository import IRepository
+from fast_database.repositories.abstraction import IRepository
 from fast_database.models.api_lk import ApiLk
 
 

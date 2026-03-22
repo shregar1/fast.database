@@ -28,7 +28,7 @@ from sqlalchemy import (
 )
 from sqlalchemy.types import JSON
 
-from fast_database.constants.db.table import Table
+from fast_database.constants.table import Table
 from fast_database.models import Base
 
 

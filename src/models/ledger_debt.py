@@ -11,7 +11,7 @@ from datetime import datetime
 
 from sqlalchemy import BigInteger, Column, Date, DateTime, ForeignKey, Numeric, String, Text, UniqueConstraint
 
-from fast_database.constants.db.table import Table
+from fast_database.constants.table import Table
 from fast_database.models import Base
 
 

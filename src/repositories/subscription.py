@@ -6,10 +6,10 @@ start_date, grace period, etc.). Create, retrieve by id/urn, update, soft
 delete, list with active_only, count, retrieve_latest_active_by_user_id, and
 retrieve_effective_subscription_by_user_id (ACTIVE/trialing/past_due in grace).
 Used by entitlements and plan rate limit. Extends
-:class:`~fast_repositories.repository.IRepository` with ``model=Subscription``.
+:class:`~fast_database.repositories.repository.IRepository` with ``model=Subscription``.
 
 Usage:
-    >>> from fast_repositories.subscription import SubscriptionRepository
+    >>> from fast_database.repositories.subscription import SubscriptionRepository
     >>> repo = SubscriptionRepository(session=db_session)
     >>> sub = repo.retrieve_effective_subscription_by_user_id(user_id=1)
 """
@@ -20,7 +20,7 @@ from sqlalchemy import func
 from loguru import logger
 from sqlalchemy.orm import Session
 
-from fast_repositories.repository import IRepository
+from fast_database.repositories.abstraction import IRepository
 from fast_database.models.subscription import Subscription
 
 

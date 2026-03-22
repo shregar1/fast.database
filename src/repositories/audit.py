@@ -7,7 +7,7 @@ filters (actor_id, action, resource, resource_id, from_ts, to_ts) and
 pagination. Uses IRepository base and ``fast_database.models.audit.AuditLog``.
 
 Usage:
-    >>> from fast_repositories.audit import AuditRepository
+    >>> from fast_database.repositories.audit import AuditRepository
     >>> repo = AuditRepository(session=db_session)
     >>> repo.create_record(record=audit_log_instance)
     >>> items, total = repo.retrieve_records(actor_id=1, action="user.update", skip=0, limit=50)
@@ -19,7 +19,7 @@ from datetime import datetime
 
 from sqlalchemy.orm import Session
 
-from fast_repositories.repository import IRepository
+from fast_database.repositories.abstraction import IRepository
 from fast_database.models.audit import AuditLog
 
 

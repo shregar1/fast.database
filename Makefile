@@ -16,16 +16,16 @@ test-fast:
 	pytest tests/ -v -x --tb=short -q || true
 
 lint:
-	ruff check src/fast_database src/fast_repositories tests || true
+	ruff check src/fast_database src/fast_database.repositories tests || true
 
 format:
-	ruff format src/fast_database src/fast_repositories tests || true
+	ruff format src/fast_database src/fast_database.repositories tests || true
 
 type-check:
-	mypy src/fast_database src/fast_repositories --ignore-missing-imports || true
+	mypy src/fast_database src/fast_database.repositories --ignore-missing-imports || true
 
 security:
-	bandit -r src/fast_database src/fast_repositories -q || true
+	bandit -r src/fast_database src/fast_database.repositories -q || true
 
 clean:
 	rm -rf build dist *.egg-info .pytest_cache .mypy_cache .ruff_cache htmlcov .coverage coverage.xml
