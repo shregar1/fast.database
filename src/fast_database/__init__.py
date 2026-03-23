@@ -10,11 +10,11 @@ The canonical declarative `Base` is exposed here for convenience:
 Mixins, soft-delete, optimistic locking, and soft-delete helpers::
 
     from fast_database import Base, TimestampMixin, SoftDeleteMixin, OrganizationScopedMixin
-    from fast_database.soft_delete import select_active, mark_soft_deleted
+    from fast_database.core.soft_delete import select_active, mark_soft_deleted
 """
 
-from fast_database.models import Base
-from fast_database.mixins import (
+from fast_database.persistence.models import Base
+from fast_database.core.mixins import (
     AuditActorMixin,
     OptimisticLockMixin,
     OrganizationScopedMixin,
@@ -23,12 +23,12 @@ from fast_database.mixins import (
     TimestampMixin,
     UUIDPrimaryKeyMixin,
 )
-from fast_database.optimistic_lock import (
+from fast_database.core.optimistic_lock import (
     StaleVersionError,
     assert_version_matches,
     expected_version,
 )
-from fast_database.soft_delete import (
+from fast_database.core.soft_delete import (
     filter_active,
     mark_soft_deleted,
     restore_soft_deleted,
