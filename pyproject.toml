@@ -23,7 +23,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "fast-database"
-version = "0.4.1"
+version = "1.5.0"
 description = "Shared SQLAlchemy ORM models plus IRepository and concrete repos for FastMVC apps."
 readme = "README.md"
 requires-python = ">=3.10"
