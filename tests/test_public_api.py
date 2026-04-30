@@ -6,7 +6,7 @@ import importlib
 
 import pytest
 
-PACKAGE = "fast_database"
+PACKAGE = "fastx_database"
 
 
 def test_package_imports():

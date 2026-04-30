@@ -7,7 +7,7 @@ def test_mixin_and_soft_delete_exported_from_package():
     Returns:
         The result of the operation.
     """
-    from fast_database import (
+    from fastx_database import (
         Base,
         SoftDeleteMixin,
         TimestampMixin,

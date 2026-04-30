@@ -1,13 +1,13 @@
 """Smoke tests for selected ORM models (no live DB required)."""
 
-from fast_database import Base
-from fast_database.core.constants.table import Table
-from fast_database.persistence.models.crowdfunding import CrowdfundingCampaign
-from fast_database.persistence.models.healthcare import HealthcareFacility
-from fast_database.persistence.models.industrial_iot import IndustrialFacility
-from fast_database.persistence.models.messaging_chat import Chat
-from fast_database.persistence.models.status_lk import StatusLk
-from fast_database.persistence.models.user import User
+from fastx_database import Base
+from fastx_database.core.constants.table import Table
+from fastx_database.persistence.models.crowdfunding import CrowdfundingCampaign
+from fastx_database.persistence.models.healthcare import HealthcareFacility
+from fastx_database.persistence.models.industrial_iot import IndustrialFacility
+from fastx_database.persistence.models.messaging_chat import Chat
+from fastx_database.persistence.models.status_lk import StatusLk
+from fastx_database.persistence.models.user import User
 
 
 def test_user_tablename():

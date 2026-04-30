@@ -8,9 +8,9 @@ from unittest.mock import MagicMock
 from sqlalchemy import Column, Integer
 from sqlalchemy.orm import Query
 
-from fast_database.persistence.models import Base
-from fast_database.core.mixins import SoftDeleteMixin
-from fast_database.core.soft_delete import (
+from fastx_database.persistence.models import Base
+from fastx_database.core.mixins import SoftDeleteMixin
+from fastx_database.core.soft_delete import (
     filter_active,
     mark_soft_deleted,
     restore_soft_deleted,

@@ -6,14 +6,14 @@ import pytest
 from sqlalchemy import Column, Integer, String, create_engine
 from sqlalchemy.orm import DeclarativeBase
 
-from fast_database.migrations import (
+from fastx_database.migrations import (
     ModelMigration,
     get_model_migration,
     get_registered_models,
     register_model_migration,
     run_model_migrations,
 )
-from fast_database.migrations.registry import MigrationRegistry
+from fastx_database.migrations.registry import MigrationRegistry
 
 
 class TestBase(DeclarativeBase):
@@ -112,7 +112,7 @@ class TestMigrationFunctions:
 
     def test_register_and_get_model_migration(self):
         """Test registering and retrieving a model migration."""
-        from fast_database.migrations.registry import _registry
+        from fastx_database.migrations.registry import _registry
 
         _registry.clear()
 
@@ -136,7 +136,7 @@ class TestMigrationFunctions:
 
     def test_get_registered_models(self):
         """Test getting all registered models."""
-        from fast_database.migrations.registry import _registry
+        from fastx_database.migrations.registry import _registry
 
         _registry.clear()
 
@@ -164,7 +164,7 @@ class TestAutoMigration:
 
     def test_auto_migration_creates_table(self):
         """Test that auto-migration creates the table."""
-        from fast_database.migrations.model_migration import AutoModelMigration
+        from fastx_database.migrations.model_migration import AutoModelMigration
 
         class AutoModel(TestBase):
             """Represents the AutoModel class."""
@@ -191,7 +191,7 @@ class TestAutoMigration:
 
     def test_auto_migration_is_applied(self):
         """Test that auto-migration can check if applied."""
-        from fast_database.migrations.model_migration import AutoModelMigration
+        from fastx_database.migrations.model_migration import AutoModelMigration
 
         class CheckModel(TestBase):
             """Represents the CheckModel class."""
@@ -221,7 +221,7 @@ class TestMigrationDiscovery:
 
     def test_discover_model_migration_returns_migration(self):
         """Test discovering migration for a model."""
-        from fast_database.migrations.discovery import discover_model_migration
+        from fastx_database.migrations.discovery import discover_model_migration
 
         class DiscoverModel(TestBase):
             """Represents the DiscoverModel class."""
@@ -234,7 +234,7 @@ class TestMigrationDiscovery:
 
     def test_discover_model_migration_uses_existing(self):
         """Test that discovery uses existing __migration__ attribute."""
-        from fast_database.migrations.discovery import discover_model_migration
+        from fastx_database.migrations.discovery import discover_model_migration
 
         class ExistingMigrationModel(TestBase):
             """Represents the ExistingMigrationModel class."""
@@ -256,7 +256,7 @@ class TestMigrationGenerator:
 
     def test_generate_model_migration_returns_string(self):
         """Test that migration generator returns a string."""
-        from fast_database.migrations.generator import generate_model_migration
+        from fastx_database.migrations.generator import generate_model_migration
 
         class GenModel(TestBase):
             """Represents the GenModel class."""
@@ -272,7 +272,7 @@ class TestMigrationGenerator:
 
     def test_generate_model_migration_includes_columns(self):
         """Test that generated migration includes column info."""
-        from fast_database.migrations.generator import generate_model_migration
+        from fastx_database.migrations.generator import generate_model_migration
 
         class ColModel(TestBase):
             """Represents the ColModel class."""
@@ -291,7 +291,7 @@ class TestIntegration:
 
     def test_full_migration_workflow(self):
         """Test the complete migration workflow."""
-        from fast_database.migrations.registry import _registry
+        from fastx_database.migrations.registry import _registry
 
         _registry.clear()
 

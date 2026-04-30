@@ -5,7 +5,7 @@ from unittest.mock import MagicMock
 import pytest
 from cachetools import LRUCache
 
-from fast_database.persistence.repositories import FilterOperator, IRepository
+from fastx_database.persistence.repositories import FilterOperator, IRepository
 
 
 class TestFilterOperator:

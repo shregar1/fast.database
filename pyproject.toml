@@ -1,9 +1,9 @@
 
 
 [tool.coverage.run]
-# Models stay at the 95% gate; concrete `fast_database.repositories/*` modules are thin CRUD wrappers
+# Models stay at the 95% gate; concrete `fastx_database.repositories/*` modules are thin CRUD wrappers
 # exercised in app/integration tests rather than this package's unit suite.
-source = ["fast_database"]
+source = ["fastx_database"]
 branch = false
 omit = ["*/tests/*"]
 
@@ -22,11 +22,31 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "fast-database"
-version = "1.5.0"
+name = "fastx-database"
+version = "1.7.0"
 description = "Shared SQLAlchemy ORM models plus IRepository and concrete repos for FastMVC apps."
 readme = "README.md"
 requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    {name = "Shivansh Sengar", email = "sengarsinghshivansh@gmail.com"},
+    {name = "Shreyansh Sengar", email = "sengarsinghshreyansh@gmail.com"},
+]
+keywords = ["fastapi", "database", "sqlalchemy", "orm", "models", "fastmvc"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Database",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Typing :: Typed",
+]
 dependencies = [
     "sqlalchemy>=2.0,<3.0",
     "loguru>=0.7.0,<1.0.0",
@@ -39,6 +59,10 @@ dev = [
     "pytest-cov>=4.0.0",
     "factory-boy>=3.3.0",
 ]
+
+[project.urls]
+Homepage = "https://github.com/shregar1/fastMVC"
+Repository = "https://github.com/shregar1/fastMVC"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

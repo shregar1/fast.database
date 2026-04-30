@@ -1,6 +1,6 @@
 """Tests for shared table name constants."""
 
-from fast_database.core.constants.table import Table
+from fastx_database.core.constants.table import Table
 
 
 def test_core_table_names_exist():
