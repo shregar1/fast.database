@@ -181,3 +181,8 @@ local_config.py
 # Profiling
 *.prof
 *.lprof
+
+# Archives
+*.zip
+*.tar.gz
+*.tgz
