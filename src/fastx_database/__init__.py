@@ -38,6 +38,14 @@ from fastx_database.core.optimistic_lock import (
     assert_version_matches,
     expected_version,
 )
+from fastx_database.pagination import (
+    CursorPage,
+    CursorPaginationMixin,
+    OffsetPage,
+    OffsetPaginationMixin,
+    decode_cursor,
+    encode_cursor,
+)
 from fastx_database.core.soft_delete import (
     filter_active,
     filter_not_deleted,
@@ -48,6 +56,7 @@ from fastx_database.core.soft_delete import (
     SoftDeleteRepositoryMixin,
     where_not_deleted,
 )
+from fastx_database.bulk import BulkOperationsMixin, BulkResult
 
 __all__ = [
     # Mixins
@@ -71,6 +80,16 @@ __all__ = [
     "filter_not_deleted",
     "SoftDeleteQuery",
     "SoftDeleteRepositoryMixin",
+    # Pagination
+    "CursorPage",
+    "CursorPaginationMixin",
+    "OffsetPage",
+    "OffsetPaginationMixin",
+    "decode_cursor",
+    "encode_cursor",
+    # Bulk operations
+    "BulkOperationsMixin",
+    "BulkResult",
     # Migrations
     "ModelMigration",
     "get_model_migration",
